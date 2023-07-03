@@ -19,7 +19,8 @@ const time = firstTransaction
 	.querySelector("button>span>span:nth-child(2) div")
 
 const price = firstTransaction
-	.querySelector("button>span:nth-child(3)")
+	.querySelector("button>span:nth-child(3) span")
+
 
 // Update title
 title.innerHTML = transactionDetails.title
@@ -36,3 +37,6 @@ icon.innerHTML = icon.innerHTML.replace(/background-image: image-set\(url\(&quot
 // Remove the 0 from the beginning of the hour
 // Also strip PM/AM
 time.innerHTML = "Pending&nbsp;&middot;&nbsp;Today, " + new Date(transactionDetails.time).toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" }).replace(/^0/, "").replace(/(AM|PM)/, "")
+
+// Update price
+price.innerHTML = "- RON&nbsp;" + transactionDetails.price;
